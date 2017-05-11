@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Meus Rastreios</ion-title>
+    <ion-buttons right showWhen="ios,windows">
+      <button ion-button icon-only (click)="newCode()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content no-padding>
+  <ion-list>
+    <ion-item *ngFor="let track of tracks">
+      <h2>{{track.title}}</h2>
+      <p>{{track.code}}</p>
+    </ion-item>
+  </ion-list>
+  <ion-fab right bottom showWhen="android">
+    <button ion-fab color="dark" (click)="newCode()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>

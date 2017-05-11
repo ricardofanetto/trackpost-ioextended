@@ -1,0 +1,15 @@
+import { Component } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
+
+@Component({
+  selector: 'page-new-code',
+  templateUrl: 'new-code.html',
+})
+export class NewCodePage {
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams) {
+  }
+
+}
