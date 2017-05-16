@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Meus Rastreios</ion-title>
+    <ion-buttons right hideWhen="android">
+      <button ion-button icon-only (click)="newCode()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content no-padding>
+  <ion-list>
+    <ion-item *ngIf="tracks.length == 0">
+      <p>Não existem itens para ser exibidos</p>
+    </ion-item>
+    <ion-item *ngFor="let track of tracks">
+      <h2 (click)="visualizar(track)">{{track.title}}</h2>
+      <p>{{track.code}}</p>
+      <button ion-button color="danger" item-right icon-only clear round (click)="remove(track.code)">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+  <ion-fab right bottom showWhen="android">
+    <button ion-fab color="dark" (click)="newCode()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>
